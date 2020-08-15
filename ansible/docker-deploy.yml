@@ -1,5 +1,5 @@
 
-- hosts: 172.31.44.254
+- hosts: 1localhost
   become: True
   tasks:
     - name: install pip
@@ -21,6 +21,6 @@
         state: present
     - name: Create  container
       docker_container:
-        name: ntopng
+        name: nmap
         image: marcelbanic/nmap:{{tag}}
         published_ports: ["8080:8888"]
